@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Pets
+  form(action="/newPet")
+    input(type="text", placeholder="Name...", name="name")
+    input(type="text", placeholder="Type...", name="type")
+    input(type="number", placeholder="Age..", name="age")
+    input(type="submit", value="add new pet")
+
+    table
+      tr
+        th Name
+        th Type
+        th Age
+      for pet in pets
+        tr
+          th #{pet.name}
+          th #{pet.type}
+          th #{pet.age}
